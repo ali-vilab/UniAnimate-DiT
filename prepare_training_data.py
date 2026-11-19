@@ -174,7 +174,7 @@ def dw_func(_id, file_path, dwpose_model, dwpose_woface_folder='tmp_dwpose_wo_fa
             
             if frame.shape[1]>frame.shape[0]:
                 margin = (frame.shape[1] - frame.shape[0])//2
-                frame = frame[:,margin:-margin]
+                frame = frame[:, margin:margin + frame.shape[0]]
 
             frame_h, frame_w, _ = frame.shape
             if frame_w>=2048:
